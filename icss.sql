@@ -1,0 +1,1 @@
+SELECT * FROM homemanagementsystem.family_member;
