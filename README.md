@@ -164,3 +164,43 @@ Each citizen has at most one health and one welfare record, but may own multiple
 - Integrate biometric authentication  
 - Mobile app interface  
 - API-based real-time connections to government systems (e.g., NSSF, URA)  
+📄 PHP File Descriptions
+db.php
+This file is responsible for establishing a connection to the database.
+It contains the credentials and settings required to interact with the MySQL (or other) database system. Typically, it includes:
+
+Hostname (e.g., localhost)
+
+Database name (e.g., icss_db)
+
+Username and password
+
+A connection object (e.g., $conn) that is used in other files to execute queries.
+
+✅ Acts as a central config file for database access across the project.
+
+index.php
+This is the main user interface file for the application.
+It typically includes:
+
+An HTML form that allows users to enter or search for citizen information using their NIN.
+
+Tabs or sections for Health, Social Welfare, and Land Ownership data.
+
+Form inputs for each data type, which are submitted to submit.php.
+
+🎯 Provides a user-friendly interface for interacting with the database.
+
+submit.php
+This file is used to process and store form data submitted from index.php.
+It:
+
+Collects form input via $_POST.
+
+Connects to the database (usually via include 'db.php';).
+
+Runs SQL INSERT, UPDATE, or DELETE queries depending on the action.
+
+May redirect the user back to index.php with a success or error message.
+
+🔄 Acts as the back-end processor for inserting/updating citizen records.
